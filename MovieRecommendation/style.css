@@ -1,0 +1,35 @@
+*{
+    font-family: comic sans MS;
+}
+
+.container{
+    
+    width: 70vw;
+    height: 80vh;
+    border: 2px solid black;
+    padding: 18px;
+    margin: 25px auto;
+    background-image: url(https://c4.wallpaperflare.com/wallpaper/436/228/997/movies-mad-max-the-dark-knight-interstellar-movie-wallpaper-preview.jpg);
+    background-position: center; 
+    
+    
+;    
+
+}
+h1{
+    text-align: center;
+    font-size: 1.2rem;
+    color: blanchedalmond;
+}
+input, button{
+    font-size: 1.2rem;
+    
+}
+.search {
+    display: flex;
+    justify-content: center;   
+   
+    
+}
+
+
