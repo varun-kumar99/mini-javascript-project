@@ -1,0 +1,93 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom right, #5e96eb, #0a2341); /* Light gradient background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.background {
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    color: white;
+}
+
+.board-container {
+    margin-top: 20px;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 5px;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    cursor: pointer;
+    border-radius: 15px; /* Round corners */
+}
+
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px; /* Round corners */
+    background-color: #4CAF50; /* Green color */
+    color: white; /* Text color */
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049; /* Darker green color on hover */
+}
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.5); /* Black with opacity */
+}
+
+.modal-content {
+    background: linear-gradient(to bottom right, #4caf50, #00796b); /* Gradient background */
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border-radius: 15px; /* Rounded corners */
+    width: 30%; /* Could be more or less, depending on screen size */
+    color: white;
+    text-align: center;
+}
+
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
