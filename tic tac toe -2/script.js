@@ -19,21 +19,24 @@ function makeMove(cellIndex) {
             if (crossPositions.length === 4) {
                 removeFirst('X');
             }
+            playSound('cross'); // Play sound for cross move
         } else {
             circlePositions.push(cellIndex);
             if (circlePositions.length === 4) {
                 removeFirst('O');
             }
+            playSound('circle'); // Play sound for circle move
         }
 
         // Update the cell with the current player's mark
         cell.innerText = currentPlayer === 'cross' ? 'X' : 'O';
+        cell.classList.add(currentPlayer); // Add class for color
 
         // Check for a winner after updating the board
         const positions = currentPlayer === 'cross' ? crossPositions : circlePositions;
         if (checkWinner(positions)) {
             const winner = currentPlayer === 'cross' ? 'Cross' : 'Circle';
-            showModal(`${winner} wins!`); // Display winning popup
+            showModal(`${winner} wins!`, currentPlayer); // Display winning popup
             resetGame(); // Reset the game
             return;
         }
@@ -41,6 +44,10 @@ function makeMove(cellIndex) {
         // Toggle player after checking for winner
         currentPlayer = currentPlayer === 'cross' ? 'circle' : 'cross';
     }
+}
+function playSound(player) {
+    const audio = document.getElementById(`${player}-audio`);
+    audio.play();
 }
 
 function checkWinner(positions) {
@@ -76,10 +83,17 @@ function showModal(message) {
     const winnerMessage = document.getElementById('winner-message');
     winnerMessage.textContent = message;
     modal.style.display = 'block';
+
+    // Play winning sound
+    playWinSound();
 }
 
 // Function to close the modal
 function closeModal() {
     const modal = document.getElementById('winning-popup');
     modal.style.display = 'none';
+}
+function playWinSound() {
+    const audio = document.getElementById('win-sound');
+    audio.play();
 }
